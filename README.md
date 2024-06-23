@@ -138,6 +138,50 @@ source: DOI 10.1109/TMC.2024.3375325
 
 ---
 
+2024/6/23
+
+title: A Coalition Formation Game Approach for Personalized Federated Learning
+
+source: arXiv:2202.02502v2
+
+Good Paper
+
+recommended
+
+
+
+title: A Data Privacy Protection Scheme Integrating  Federal Learning and Secret Sharing
+
+source: 2023 IEEE 5th International Conference on Power, Intelligent Computing and Systems (ICPICS) DOI: 10.1109/ICPICS58376.2023.10235406
+
+对数据使用密码学加密，学过密码学就知道这个特别基础 
+
+本文没有什么贡献。
+
+
+
+title:  FedMut: Generalized Federated Learning via Stochastic Mutation
+
+source: TheThirty-Eighth AAAI Conference on Artificial Intelligence (AAAI-24)
+
+对参数进行变异后进行聚合。既然对参数进行变异，其实可以启发使用遗传算法。
+
+
+
+title:  Competitive-Cooperative Multi-Agent Reinforcement Learning for Auction-based Federated Learning
+
+source: Proceedings of the Thirty-Second International Joint Conference on Artificial Intelligence (IJCAI-23)
+
+介绍了AFL。可以参考其定义
+
+个人绝对就是调整那个τ超参数来管理整个RL
+
+
+
+---
+
+
+
 
 
 title: FEDGKD: Toward Heterogeneous Federated Learning via Global Knowledge Distillation
