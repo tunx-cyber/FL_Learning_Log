@@ -180,11 +180,13 @@ recommended
 
 
 
-
+2024/6/24
 
 **title**: FEDGKD: Toward Heterogeneous Federated Learning via Global Knowledge Distillation
 
 **source**: IEEE TRANSACTIONS ON COMPUTERS, VOL. 73, NO. 1, JANUARY 2024
+
+特点就是global模型将历史模型做了一个buffer，进行平均聚合
 
 
 
