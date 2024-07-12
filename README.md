@@ -194,3 +194,21 @@ recommended
 
 **source**: TheThirty-Eighth AAAI Conference on Artificial Intelligence (AAAI-24)
 
+多目标优化的FL
+
+
+
+---
+
+2024/7/12
+
+**title:**Boosting with Multiple Sources
+
+**source**: 35th Conference on Neural Information Processing Systems (NeurIPS 2021).
+
+集成学习+fed 里面的Q函数可以研究研究
+
+
+
+---
+
