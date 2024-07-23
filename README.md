@@ -210,5 +210,93 @@ recommended
 
 
 
+**title**:  ADAPTIVE FEDERATED OPTIMIZATION
+
+**source**: ICLR 2021
+
+这个真的抽象，就是server端，自适应选择优化器 adam这种。
+
+
+
 ---
+
+2024/7/13
+
+**title**: WHAT DO WE MEAN BY GENERALIZATION IN FEDERATED LEARNING?
+
+**source**: ICLR 2022
+
+ participation gaps can quantify client dataset heterogeneity. 讨论泛化能力。以及提出一些重要的指标。
+
+
+
+----
+
+2024/7/14
+
+title:  BAYESIAN CORESET OPTIMIZATION FOR PERSONALIZED FEDERATED LEARNING
+
+source: ICLR 2024
+
+需要了解贝叶斯核心集优化。
+
+
+
+title: FEDERATED LEARNING VIA POSTERIOR AVERAGING: A NEW PERSPECTIVE AND PRACTICAL ALGORITHMS
+
+source: ICLR 2021
+
+使用蒙特卡洛采样拟合后验，然后用这些来作为聚合的权重。
+
+
+
+---
+
+2024/7/20
+
+title：SIMPLE MINIMAX OPTIMAL BYZANTINE ROBUST AL GORITHM FOR NONCONVEX OBJECTIVES WITH UNI FORM GRADIENT HETEROGENEITY
+
+source：ICLR 2024
+
+好！建议精读！
+
+
+
+---
+
+2024/7/24
+
+title:  Aligning model outputs for class imbalanced non‑IID  federated learning
+
+source:  [Aligning model outputs for class imbalanced non-IID federated learning | Machine Learning (springer.com)](https://link.springer.com/article/10.1007/s10994-022-06241-5)
+
+建议精读。
+
+
+
+---
+
+title: FedSampling: A Better Sampling Strategy for Federated Learning
+
+source:  arXiv:2306.14245v1
+
+具有参考价值，针对训练样本的公平性，采用的计算方法都是基于伯努利分布。
+
+
+
+---
+
+2024/7/23
+
+title: Federated Learning under Heterogeneous and Correlated Client Availability
+
+source: DOI: 10.1109/INFOCOM53939.2023.10228876
+
+理论性很强。需要细读
+
+
+
+
+
+
 
