@@ -404,6 +404,8 @@ title:  UNDERSTANDING CONVERGENCE AND GENERALIZATION IN FEDERATED LEARNING THROU
 
 source: ICLR 2024
 
+理论性很强啊 细读
+
 gpt：
 
 1. 研究背景与动机：
@@ -438,3 +440,248 @@ gpt：
 ---
 
 2024/8/3
+
+title: MOMENTUM BENEFITS NON-IID FEDERATED LEARNING SIMPLY AND PROVABLY
+
+source: ICLR 2024
+
+就是SGD换成momentum
+
+1. 算法详细介绍：
+   - FedAvg with Momentum：
+     - 在每个客户端的本地SGD更新中引入动量项，以平滑梯度更新方向，减少由数据异质性引起的波动。
+     - 更新公式：包括本地模型更新和服务器聚合步骤，其中本地更新现在包含动量项。
+   - Scaffold with Momentum：
+     - 在Scaffold的基础上，同样在本地SGD更新中引入动量项。
+     - 控制变量的更新也进行了相应的调整，以更好地补偿由动量引入的额外影响。
+
+
+
+---
+
+2024/8/4
+
+title: INTERNAL CROSS-LAYER GRADIENTS FOR EXTENDING HOMOGENEITY TO HETEROGENEITY IN FEDERATED LEARNING
+
+source: ICLR 2024
+
+code: [ChanYunHin/InCo-Aggregation: The official source codes of ICLR2024 paper, "Internal Cross-layer Gradients for Extending Homogeneity to Heterogeneity in Federated Learning". (github.com)](https://github.com/ChanYunHin/InCo-Aggregation)
+
+需要细读
+
+### **InCo Aggregation方法**
+
+**核心思想**：利用服务器模型内部的跨层梯度（即混合浅层和深层梯度的混合梯度）来增强深层层的相似性，而无需在客户端之间进行额外的通信。
+
+**具体步骤**：
+
+1. **模型分割**：首先，在服务器模型中应用模型分割方法，将模型划分为浅层和深层部分。
+2. **跨层梯度计算**：在每次训练迭代中，计算服务器模型中浅层和深层的梯度。
+3. **梯度混合**：将浅层和深层的梯度进行混合，形成跨层梯度。这一步骤的关键在于如何有效地混合这些梯度，以避免梯度发散问题。
+4. **梯度归一化与优化**：对跨层梯度进行归一化处理，并构建一个凸优化问题来校正其方向。通过这种方式，InCo Aggregation能够自动为跨层梯度分配最优权重，避免繁琐的参数调整。
+5. **梯度聚合与模型更新**：将处理后的跨层梯度用于更新服务器模型，而不影响客户端的本地模型。
+
+
+
+---
+
+2024/8/4
+
+title: ACCURATE FORGETTING FOR HETEROGENEOUS FEDERATED CONTINUAL LEARNING
+
+source:  ICLR 2024
+
+code: https://github.com/zaocan666/AF-FCL.
+
+值得一读
+
+文心一言:
+
+1. 研究背景与动机：
+   - 联邦学习（FL）与持续学习（CL）结合：现有研究主要关注在联邦学习环境中缓解持续学习的灾难性遗忘问题，但忽略了数据/任务间的异质性可能导致的偏见。
+   - 准确遗忘的提出：作者认为遗忘现象并不总是有害的，在异构联邦学习环境中，遗忘偏见信息可能是有益的。
+2. 问题定义：
+   - 联邦持续学习（FCL）：客户端在保护各自数据隐私的同时，协作学习一系列私有顺序任务。
+   - 统计异质性：客户端之间数据分布的非独立同分布（non-IID）特性，可能导致模型学习中的偏见。
+   - 灾难性遗忘：由于存储限制、隐私问题等，模型在吸收新任务时可能忘记旧任务。
+3. 方法概述：
+   - 准确遗忘（AF）概念：提出通过相关性估计来选择性地利用旧知识，以减少偏见信息的影响。
+   - AF-FCL方法：采用基于归一化流（NF）模型的概率框架来量化旧知识的可信度，并设计了一种生成式重放方法来实现准确遗忘。
+4. 技术细节：
+   - 归一化流模型（NF）：将任意复杂的数据分布映射到预定义分布，通过一系列双射变换实现可逆性，从而无损地记忆输入知识并准确估计观测数据的概率密度。
+   - 相关性估计：利用NF模型在特征空间中进行相关性估计，识别并丢弃对当前任务可能有害的离群特征。
+5. 实验验证：
+   - 实验设置：在多个基准数据集上进行实验，包括对不同任务序列和统计异质性的模拟。
+   - 实验结果：AF-FCL方法显著优于现有基线方法，证明了准确遗忘在减少偏见信息方面的有效性。
+6. 贡献总结：
+   - 考虑了更实际且具有挑战性的FCL设置，指出了记忆偏见或无关特征的危害。
+   - 提出了准确遗忘的概念，并开发了AF-FCL方法，通过相关性估计实现旧知识的选择性利用。
+   - 通过在基准数据集上的广泛实验，验证了AF-FCL方法的有效性和优越性。
+7. 未来展望：
+   - 进一步探索准确遗忘在更复杂和动态的联邦学习场景中的应用。
+   - 优化NF模型的性能和效率，以更好地支持大规模联邦持续学习任务。
+
+
+
+---
+
+2024/8/5
+
+title: FEDERATED WASSERSTEIN DISTANCE
+
+source:  ICLR 2024
+
+FedWaD使用插值度量ξ来逼近两个分布之间的真实Wasserstein距离。插值度量在每次迭代中根据当前值和客户端的本地数据进行更新
+
+这篇论文比较硬核，看不懂啊，这公式。
+
+
+
+---
+
+2024/8/5
+
+title:  FEDERATED LEARNING VIA POSTERIOR AVERAGING: A NEW PERSPECTIVE AND PRACTICAL ALGORITHMS
+
+source: ICLR 2021
+
+1. 联邦学习的新视角：
+   - **后验推断视角**：传统上，联邦学习被视为优化问题，旨在通过分布式计算最小化全局损失函数。本文提出将联邦学习重新定义为后验推断问题，即各客户端设备通过本地数据推断局部后验分布，以汇总推断全局后验分布。
+   - **全局后验分解**：在均匀先验下，全局后验分布可以分解为各客户端局部后验分布的乘积，这一性质为联邦后验推断提供了理论基础。
+2. 联邦后验平均（FedPA）算法：
+   - **算法设计**：FedPA算法使用马尔可夫链蒙特卡洛（MCMC）方法进行局部后验的近似推断，并将统计信息高效地传递给服务器，服务器则利用这些统计信息精炼全局后验模式的估计。
+   - **高效性**：FedPA在计算和通信上都是高效的，其计算复杂度和内存占用与联邦平均（FedAvg）相似，但能够克服FedAvg在客户端数据异质性下的收敛问题。
+3. 与联邦平均（FedAvg）的比较：
+   - **FedAvg的局限性**：FedAvg在客户端数据异质性较高时，由于局部计算增多会导致偏差更新，从而收敛到次优解。
+   - **FedPA的优势**：FedPA通过增加局部计算量可以加速收敛并更接近全局最优解，而不会出现FedAvg的停滞问题。
+
+### 3. 算法步骤
+
+FED PA的算法可以分为以下几个步骤：
+
+#### 3.1 初始化
+
+- 初始化全局模型参数 *θ*。
+- 设定客户端数量 *N*，每轮参与训练的客户端子集 *S* 的大小 *M*。
+
+#### 3.2 客户端更新
+
+对于每个参与训练的客户端 *i*∈*S*，执行以下步骤：
+
+1. 本地计算
+
+   ：
+
+   - 从服务器接收当前的全局模型参数 *θ*。
+   - 使用MCMC（马尔可夫链蒙特卡洛）方法在本地数据上执行 *K* 步迭代，近似推断出本地后验分布 *P*(*θ*∣*D**i*)。这一步骤可以通过Laplace近似来简化，即估计本地后验的均值 *μ*^*i* 和协方差 Σ^*i*。
+
+2. 发送更新
+
+   ：
+
+   - 将估计的均值 *μ*^*i* 和协方差 Σ^*i*（或其统计量，如充分统计量）发送回服务器。
+
+#### 3.3 服务器更新
+
+服务器接收来自客户端的后验统计量后，执行以下步骤：
+
+1. 汇总后验
+
+   ：
+
+   - 使用接收到的统计量（例如，通过加权平均各客户端的均值和协方差）来估计全局后验分布。
+   - 根据全局后验分布的估计，计算后验模式（即最大后验估计，对应优化问题的解）。这可以通过将各客户端的本地后验相乘并归一化来实现（在实际操作中，由于计算复杂性，可能使用Laplace近似或其他近似方法）。
+
+2. 更新全局模型
+
+   ：
+
+   - 使用计算出的后验模式来更新全局模型参数 *θ*。
+
+3. 广播更新
+
+   ：
+
+   - 将更新后的全局模型参数 *θ* 广播给所有客户端，以便进行下一轮训练。
+
+#### 3.4 重复训练
+
+重复执行客户端更新和服务器更新步骤，直到达到预定的训练轮次 *T* 或满足其他收敛条件。
+
+### 4. 算法优势
+
+- **通信效率**：FED PA通过只传递后验分布的统计量（如均值和协方差），而不是整个模型参数，显著降低了通信成本。
+- **计算效率**：通过在客户端上进行本地MCMC采样，可以并行化计算，从而提高计算效率。
+- **收敛性**：由于后验推断的视角，FED PA能够避免联邦平均（FED AVG）在异构数据上容易陷入次优解的问题，实现更一致的收敛。
+
+### 5. 注意事项
+
+- FED PA的性能受MCMC采样效率和后验近似质量的影响。
+- 在实际应用中，可能需要调整MCMC的采样步骤数 *K* 和每轮参与训练的客户端数量 *M* 以达到最佳性能
+
+
+
+---
+
+2024/8/5
+
+title: FedMoS: Taming Client Drift in Federated Learning with Double Momentum and Adaptive Selection
+
+source: DOI: 10.1109/INFOCOM53939.2023.10228957 INFOCOM2023
+
+缝合怪：前面的momentum + client selection
+
+code: [Distributed-Learning-Networking-Group/FedMoS (github.com)](https://github.com/Distributed-Learning-Networking-Group/FedMoS)
+
+
+
+---
+
+2024/8/6
+
+title: FEDIMPRO: MEASURING AND IMPROVING CLIENT UP DATE IN FEDERATED LEARNING
+
+source: ICLR 2024
+
+code: https://github. com/wizard1203/FedImpro.
+
+好文章，意图使用近似的分布解决了non-iid的泛化问题。也对神经网络进行了分层。
+
+非常值得借鉴。
+
+
+
+---
+
+break
+
+ICLR的文章都很好，很多的想法都和我阅读以前的想法非常接近。重点关注
+
+INFOCOM的文章也很好
+
+---
+
+2024/8/6
+
+title: Federated Generative Model on Multi-Source Heterogeneous Data in IoT
+
+source: The Thirty-Seventh AAAI Conference on Artificial Intelligence (AAAI-23)
+
+FED + GAN + IoT
+
+没啥创新的，基础。
+
+
+
+---
+
+2024/8/7
+
+title: Adaptive Federated Learning on Non-IID Data With Resource Constraint
+
+source: IEEE TRANSACTIONSONCOMPUTERS,VOL.71,NO.7,JULY2022
+
+强化学习找到最优的batch size
+
+
+
