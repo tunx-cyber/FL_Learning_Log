@@ -270,6 +270,8 @@ title:  Aligning model outputs for class imbalanced non‑IID  federated learnin
 
 source:  [Aligning model outputs for class imbalanced non-IID federated learning | Machine Learning (springer.com)](https://link.springer.com/article/10.1007/s10994-022-06241-5)
 
+machine learning这个杂志
+
 建议精读。
 
 
@@ -684,4 +686,146 @@ source: IEEE TRANSACTIONSONCOMPUTERS,VOL.71,NO.7,JULY2022
 强化学习找到最优的batch size
 
 
+
+---
+
+2024/8/7
+
+title:  FedGCR: Achieving Performance and Fairness for Federated Learning with Distinct Client Types via Group Customization and Reweighting
+
+source: TheThirty-Eighth AAAI Conference on Artificial Intelligence (AAAI-24)
+
+code:  https://github.com/celinezheng/fedgcr
+
+type prompt, cluster, Gaussian Mixture Model, GC-Net
+
+
+
+---
+
+2024/8/7
+
+title:  FedDAT: An Approach for Foundation Model Finetuning in Multi-Modal Heterogeneous Federated Learning
+
+source: TheThirty-Eighth AAAI Conference on Artificial Intelligence (AAAI-24)
+
+parameter-efficient f inetuning (PEFT) method, adapter & Mutual Knowledge Distillation 
+
+
+
+---
+
+title: FedSDG-FS: Efficient and Secure Feature Selection for Vertical Federated Learning
+
+source: DOI: 10.1109/INFOCOM53939.2023.10228895
+
+FL框架：
+
+[Flower: A Friendly Federated Learning Framework](https://flower.ai/)
+
+对feature selection有重要研究
+
+
+
+---
+
+title: Adaptive Configuration for Heterogeneous Participants in Decentralized Federated Learning
+
+source: DOI: 10.1109/INFOCOM53939.2023.10228945
+
+### 2. 本地更新频率的自适应控制
+
+在传统的同步去中心化联邦学习方案中，所有工作节点的本地更新频率通常是相同或固定的。然而，由于系统异质性的存在，这种方法会导致高计算能力的节点等待低计算能力节点，从而产生非可忽略的空闲时间，降低训练效率。
+
+FedHP 通过为每个工作节点分配不同的本地更新频率来解决这个问题。具体而言，算法会根据每个节点的计算能力（如 CPU 频率）动态调整其本地更新频率。这样，计算能力强的节点可以在每次通信轮次中执行更多的本地迭代，而计算能力弱的节点则执行较少的迭代。通过这种方式，可以减少由于等待低性能节点而产生的空闲时间。
+
+### 3. 网络拓扑的自适应构建
+
+统计异质性（即数据在节点间非独立同分布）是影响模型训练性能的另一大挑战。为了处理这个问题，FedHP 通过构建动态的网络拓扑来优化节点间的通信。
+
+具体来说，算法会优先连接数据分布差异较大的节点（即共识距离较大的节点），使它们能够更频繁地交换模型参数。这样做可以加快训练过程在非独立同分布数据上的收敛速度，同时保证模型训练的准确性。
+
+### 4. 收敛分析和优化算法
+
+FedHP 通过理论分析建立了本地更新频率和网络拓扑与模型训练性能之间的关系，并获得了收敛上界。基于这一理论分析，FedHP 提出了一种优化算法，该算法能够自适应地确定不同边缘节点的本地更新频率和邻居节点，从而在训练速度和模型准确性之间取得良好的平衡。
+
+### 5. 算法的执行步骤
+
+1. **初始化**：确定每个节点的初始本地模型参数和学习能力。
+2. **自适应本地更新**：在每个通信轮次中，根据节点的计算能力动态调整其本地更新频率。
+3. **模型交换和聚合**：节点与其邻居交换本地模型参数，并根据网络拓扑进行聚合。
+4. **更新网络拓扑**：根据节点间的共识距离动态调整网络拓扑。
+5. **迭代直至收敛**：重复上述步骤，直到模型收敛或达到预设的迭代次数。
+
+
+
+---
+
+2024/8/18
+
+title: FAKE IT TILL MAKE IT: FEDERATED LEARNING WITH CONSENSUS-ORIENTED GENERATION
+
+source: ICLR 2024
+
+有code
+
+generating data to complement the original dataset and conducting knowledge distillation on the local model.
+
+We propose to generate task-specific and client-specific data by learning to produce samples that can be accurately predicted by the current global model and falsely predicted by the previous local model. Such generated data can contain consensual knowledge for the targeted task and complement the client dataset to increase data diversity.
+
+
+
+---
+
+2024/8/19
+
+title:  PEFLL: PERSONALIZED FEDERATED LEARNING BY LEARNING TO LEARN
+
+source: ICLR 2024
+
+有代码
+
+有意思的点就是learning to learning
+
+![image-20240819232104583](img/image-20240819232104583.png)
+
+
+
+---
+
+2024/8/20
+
+title: LIKE OIL AND WATER: GROUPROBUSTNESS METHODS AND POISONING DEFENSES MAY BE AT ODDS
+
+source: ICLR 2024
+
+assume **g** is a minority group if and only if the number of samples from g is significantly lower than the average amount of samples from each group
+
+(i) identification uses heuristics to identify pseudo group annotations for training samples; and 
+
+(ii) amplification uses these annotations to amplify under-represented groups
+
+(i) identifies the training samples isolated in gradient space as outliers, and 
+
+(ii) eliminates them as potential poisons during training
+
+
+
+---
+
+2024/8/20
+
+title: The Distributed Discrete Gaussian Mechanism for Federated Learning with Secure Aggregation
+
+source: google search 
+
+code: https://githubcom/google-research/ federated/tree/master/distributeddp.
+
+讲隐私的
+
+好难懂
+
+
+
+---
 
