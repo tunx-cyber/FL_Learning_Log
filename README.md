@@ -829,3 +829,111 @@ code: https://githubcom/google-research/ federated/tree/master/distributeddp.
 
 ---
 
+2024/8/29
+
+title: Federated Multi-Objective Learning
+
+source:  37th Conference on Neural Information Processing Systems (NeurIPS 2023)
+
+The first line of works are gradient-free methods (e.g., evolutionary MOO algorithms and Bayesian MOOalgorithms [10, 11, 12, 13]). These methods are more suitable for small-scale problems but less practical for high-dimensional MOO models (e.g., deep neural networks). 
+
+没啥稀奇的，就是加个多目标，多任务而已
+
+
+
+---
+
+2024/8/29
+
+title: HETEROGENEOUS PERSONALIZED FEDERATED LEARNING BY LOCAL-GLOBAL UPDATES MIXING VIA CONVERGENCE RATE
+
+souce: ICLR 2024
+
+code: https://github.com/med-air/HeteroPFL.
+
+key idea: 
+
+By mixing local and global updates, we can make the best use of both local and global knowledge to maximize the performance for each client.
+
+![image-20240829233806342](img/image-20240829233806342.png)
+
+利用gram matrix H(t)
+
+NTK
+
+![image-20240829233900583](img/image-20240829233900583.png)
+
+为了减少计算gram matrix复杂度，使用最后一层来计算。
+
+**推荐读**
+
+
+
+---
+
+2024/8/30
+
+title: A Reinforcement Learning Approach for Minimizing Job Completion Time in Clustered Federated Learning
+
+source: DOI: 10.1109/INFOCOM53939.2023.10228925
+
+mitigating the influence of non IID data and the straggler effect while guaranteeing the FL model convergence performance
+
+i) a clustering algorithm constructs clusters, each containing clients with similar computing and communications capabilities to combat the straggler effect within a cluster; 
+
+ii) a deep reinforcement learning (DRL) algorithm based on soft actor-critic with discrete actions intelligently selects a subset of clients from each cluster to mitigate the impact of non IID data, and derives the number of intra-cluster aggregation iterations for each cluster to reduce the straggler effect among clusters.
+
+
+
+---
+
+2024/8/30
+
+title: Joint Superposition Coding and Training for Federated Learning over Multi-Width Neural Networks
+
+source: DOI: 10.1109/INFOCOM48880.2022.9796733
+
+知识点丰富
+
+**推荐读**
+
+
+
+---
+
+2024/8/30
+
+title: Federated Generative Model on Multi-Source Heterogeneous Data in IoT
+
+source: The Thirty-Seventh AAAI Conference on Artificial Intelligence (AAAI-23)
+
+GAN + FL + 同步异步更新
+
+
+
+---
+
+INFOCOM 主要是网络相关的，主要是压缩，prune，减少energy cost或者band width
+
+
+
+---
+
+2024/8/30
+
+title: Distributed Learning for Large-Scale Models at Edge With Privacy Protection
+
+source: IEEE TRANSACTIONS ON COMPUTERS, VOL. 73, NO. 4, APRIL 2024
+
+**公式值得参考，以及隐私这部分以及这个效率这部分**
+
+
+
+---
+
+title: Formal Logic Enabled Personalized Federated Learning through Property Inference
+
+source: TheThirty-Eighth AAAI Conference on Artificial Intelligence (AAAI-24)
+
+这个符号推理看着好抽象。留着以后看
+
