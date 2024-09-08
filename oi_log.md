@@ -27,3 +27,68 @@ https://oi-wiki.org/contest/roadmap/
   - 对这些子序列进行插入排序；
 
   - 减小每个子序列中元素之间的间距，重复上述过程直至间距减少为 ![1](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)。
+
+
+
+
+
+---
+
+2024/9/5
+
+source: https://www.luogu.com.cn/problem/P1157
+
+输出每个组合
+
+```c++
+int n, r;
+vector<int> v;
+vector<vector<int>> res;
+
+void dfs(int start, int k)
+{
+    if(k > r)
+    {
+        res.push_back(v);
+        return;
+    }
+    for(int i = start; i <= n ; i++)
+    {
+        v[k-1] = i;
+        dfs(i+1, k + 1);
+    }
+}
+```
+
+
+
+
+source: https://www.luogu.com.cn/problem/P1706
+
+输出每个排列
+
+```c++
+int n;
+vector<int> v;
+vector<bool> check;
+void dfs(int k)
+{
+    if(k > n)
+    {
+        for(int i = 1; i <= n; i++)cout<<setw(5)<<v[i];
+        cout<<endl;
+        return;
+    }
+    for(int i = 1; i <= n; i++)
+    {
+        if(check[i] == false)
+        {
+            v[k] = i;
+            check[i] = true;
+            dfs(k+1);
+            check[i] = false;//回溯
+        }
+    }
+}
+```
+

@@ -570,16 +570,12 @@ FED PA的算法可以分为以下几个步骤：
 
 对于每个参与训练的客户端 *i*∈*S*，执行以下步骤：
 
-1. 本地计算
-
-   ：
+1. 本地计算：
 
    - 从服务器接收当前的全局模型参数 *θ*。
    - 使用MCMC（马尔可夫链蒙特卡洛）方法在本地数据上执行 *K* 步迭代，近似推断出本地后验分布 *P*(*θ*∣*D**i*)。这一步骤可以通过Laplace近似来简化，即估计本地后验的均值 *μ*^*i* 和协方差 Σ^*i*。
-
-2. 发送更新
-
-   ：
+   
+2. 发送更新：
 
    - 将估计的均值 *μ*^*i* 和协方差 Σ^*i*（或其统计量，如充分统计量）发送回服务器。
 
@@ -587,22 +583,16 @@ FED PA的算法可以分为以下几个步骤：
 
 服务器接收来自客户端的后验统计量后，执行以下步骤：
 
-1. 汇总后验
-
-   ：
+1. 汇总后验：
 
    - 使用接收到的统计量（例如，通过加权平均各客户端的均值和协方差）来估计全局后验分布。
    - 根据全局后验分布的估计，计算后验模式（即最大后验估计，对应优化问题的解）。这可以通过将各客户端的本地后验相乘并归一化来实现（在实际操作中，由于计算复杂性，可能使用Laplace近似或其他近似方法）。
-
-2. 更新全局模型
-
-   ：
+   
+2. 更新全局模型：
 
    - 使用计算出的后验模式来更新全局模型参数 *θ*。
 
-3. 广播更新
-
-   ：
+3. 广播更新：
 
    - 将更新后的全局模型参数 *θ* 广播给所有客户端，以便进行下一轮训练。
 
@@ -835,7 +825,7 @@ title: Federated Multi-Objective Learning
 
 source:  37th Conference on Neural Information Processing Systems (NeurIPS 2023)
 
-The first line of works are gradient-free methods (e.g., evolutionary MOO algorithms and Bayesian MOOalgorithms [10, 11, 12, 13]). These methods are more suitable for small-scale problems but less practical for high-dimensional MOO models (e.g., deep neural networks). 
+The first line of works are gradient-free methods (e.g., evolutionary MOO algorithms and Bayesian MOO algorithms [10, 11, 12, 13]). These methods are more suitable for small-scale problems but less practical for high-dimensional MOO models (e.g., deep neural networks). 
 
 没啥稀奇的，就是加个多目标，多任务而已
 
@@ -936,4 +926,52 @@ title: Formal Logic Enabled Personalized Federated Learning through Property Inf
 source: TheThirty-Eighth AAAI Conference on Artificial Intelligence (AAAI-24)
 
 这个符号推理看着好抽象。留着以后看
+
+
+
+---
+
+2024/9/4
+
+title:  FEDHYPER: A UNIVERSAL AND ROBUST LEARNING RATE SCHEDULER FOR FEDERATED LEARNING WITH HYPERGRADIENT DESCENT
+
+source:   ICLR 2024
+
+code: https://github.com/ATP-1010/FedHyper
+
+A greedy approach to set η is to select the value that can minimize the updated loss. However, this is infeasible due to the need to evaluate countless possible values.？是否有个heuristic方法搜索一下。
+
+👍
+
+
+
+---
+
+2024/9/8
+
+title: CONSTRUCTING ADVERSARIAL EXAMPLES FOR VER TICAL FEDERATED LEARNING: OPTIMAL CLIENT COR RUPTION THROUGH MULTI-ARMED BANDIT
+
+source: ICLR 2024
+
+安全
+
+
+
+---
+
+2024/9/8
+
+title:  FAIR AND EFFICIENT CONTRIBUTION VALUATION FOR VERTICAL FEDERATED LEARNING
+
+source: ICLR 2024
+
+![image-20240908205631871](img/image-20240908205631871.png)
+
+shapley value
+
+👍
+
+
+
+---
 
