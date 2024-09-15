@@ -971,7 +971,44 @@ shapley value
 
 👍
 
+---
+
+2024/9/15
+
+title: FEDERATED CAUSAL DISCOVERY FROM HETEROGENEOUS DATA
+
+source: ICLR 2024
+
+code: https://github.com/lokali/FedCDH.git
+
+因果推断，看不懂。👍
+
+
+
+----
+
+2024/9/15
+
+title: Federated Learning for Generalization, Robustness, Fairness: A Survey and Benchmark
+
+source:   IEEE TRANSACTIONS ON PATTERN ANALYSIS AND MACHINE INTELLIGENCE
+
+code: https://github.com/WenkeHuang/MarsFL
+
+一篇很好的综述
+
 
 
 ---
 
+2024/9/15
+
+title: A Bayesian Federated Learning Framework With Online Laplace Approximation
+
+source: IEEE TRANSACTIONS ON PATTERN ANALYSIS AND MACHINE INTELLIGENCE, VOL.46, NO.1, JANUA
+
+👍
+
+good paper!
+
+推荐读。
