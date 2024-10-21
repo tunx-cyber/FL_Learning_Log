@@ -96,15 +96,7 @@ conclude: 原型+softpool+practical byzantine fault-tolerance
 
 
 
-在GitHub上的浏览位置为
 
-![image-20240618235637521](img/image-20240618235637521.png)
-
----
-
-
-
-下载了相对比较高质量的文章耗时半天。
 
 ---
 
@@ -1012,3 +1004,38 @@ source: IEEE TRANSACTIONS ON PATTERN ANALYSIS AND MACHINE INTELLIGENCE, VOL.46, 
 good paper!
 
 推荐读。
+
+
+
+---
+
+2024/9/16
+
+title: Asynchronous Federated Unlearning
+
+source: DOI: 10.1109/INFOCOM53939.2023.10229075
+
+erase data的影响，这个方向的问题
+
+
+
+---
+
+title: Generalizable Heterogeneous Federated Cross-Correlation and Instance Similarity Learning
+
+source:  IEEE TRANSACTIONS ONPATTERNANALYSISANDMACHINEINTELLIGENCE,VOL.46,NO.2,FEBRUARY2024
+
+很复杂，需要细读
+
+
+
+---
+
+title: Byzantine-Robust Federated Learning: Impact of Client Subsampling and Local Updates
+
+source: ICML 2024
+
+讨论了有Byzantine client情况下，采样大小的影响。理论充分，推荐读
+
+
+
