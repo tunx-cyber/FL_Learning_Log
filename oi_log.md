@@ -92,3 +92,36 @@ void dfs(int k)
 }
 ```
 
+
+
+---
+
+2024/9/9
+
+source: https://www.luogu.com.cn/problem/P3916
+
+输入一个图，问每个点到达的最大点的编号
+
+朴素想法：对每个点直接bfs和dfs。容易超时，复杂度过高
+
+优化算法：反向建边，反向遍历每个点，这样后面的点不会大于前面的点，前面的点就已经是最大的了。
+
+```c++
+void dfs(int idx, int d)
+{
+    if(v[idx]) return;
+    v[idx] = d;
+    for(int i = 0; i < gragh[idx].size(); i++)
+    {
+        dfs(gragh[idx][i], d);
+    }
+}
+```
+
+
+
+---
+
+
+
+source: https://www.luogu.com.cn/problem/P1113
